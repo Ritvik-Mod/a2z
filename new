@@ -1,0 +1,11 @@
+#!/bin/bash
+# usage: ./new 03-arrays largest-element
+set -e
+[ $# -eq 2 ] || { echo "usage: ./new <step> <problem-slug>"; echo "e.g.   ./new 03-arrays largest-element"; exit 1; }
+DIR="step-$1/$2"
+[ -d "$DIR" ] && { echo "$DIR already exists"; exit 1; }
+mkdir -p "$DIR"
+cp templates/template.cpp "$DIR/sol.cpp"
+cp templates/template.py  "$DIR/sol.py"
+sed "s|<problem>|$2|" templates/notes.md > "$DIR/notes.md"
+echo "created $DIR"
