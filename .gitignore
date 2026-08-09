@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+
+# compiled output
+a.out
+*.o
+*.out
+*.dSYM/
+
+# python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+
+# editors
+.vscode/
+.idea/
