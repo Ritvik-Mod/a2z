@@ -244,6 +244,181 @@ void pattern15(int n)
     }
 }
 
+void pattern16(int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        char s = 'A' + i;
+        for (int j = 0; j <= i; j++)
+        {
+            cout << s;
+        }
+        cout << "\n";
+    }
+}
+
+void pattern17(int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < (n - i - 1); j++)
+        {
+            cout << " ";
+        }
+        for (int j = 0; j < i; j++)
+        {
+            char c = 'A' + j;
+            cout << c;
+        }
+        char s = 'A' + i;
+        cout << s;
+        for (int j = 1; j < i + 1; j++)
+        {
+            char c = s - j;
+            cout << c;
+        }
+        for (int j = 0; j < (n - i - 1); j++)
+        {
+            cout << " ";
+        }
+        cout << "\n";
+    }
+}
+
+void pattern18(int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        char start = 'A' + (n - i - 1);
+        for (int j = 0; j < i + 1; j++)
+        {
+            char c = start + j;
+            cout << c;
+        }
+        cout << "\n";
+    }
+}
+
+void pattern19(int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < ((2 * n) - (2 * i)) / 2; j++)
+        {
+            cout << "*";
+        }
+        for (int j = 0; j < (2 * i); j++)
+        {
+            cout << " ";
+        }
+        for (int j = 0; j < ((2 * n) - (2 * i)) / 2; j++)
+        {
+            cout << "*";
+        }
+        cout << "\n";
+    }
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < (2 + (2 * i)) / 2; j++)
+        {
+            cout << "*";
+        }
+        for (int j = 0; j < (2 * n - (2 + (2 * i))); j++)
+        {
+            cout << " ";
+        }
+        for (int j = 0; j < (2 + (2 * i)) / 2; j++)
+        {
+            cout << "*";
+        }
+        cout << "\n";
+    }
+}
+
+void pattern20(int n)
+{
+    for (int i = 0; i < n - 1; i++)
+    {
+        int blanks = 2 * n - 2 * (i + 1);
+        int stars = 2 * (i + 1);
+        for (int j = 0; j < stars / 2; j++)
+        {
+            cout << "*";
+        }
+        for (int j = 0; j < blanks; j++)
+        {
+            cout << " ";
+        }
+        for (int j = 0; j < stars / 2; j++)
+        {
+            cout << "*";
+        }
+        cout << "\n";
+    }
+    for (int i = 0; i < 2 * n; i++)
+    {
+        cout << "*";
+    }
+    cout << "\n";
+    for (int i = 0; i < n - 1; i++)
+    {
+        int stars = 2 * n - 2 * (i + 1);
+        int blanks = 2 * (i + 1);
+        for (int j = 0; j < stars / 2; j++)
+        {
+            cout << "*";
+        }
+        for (int j = 0; j < blanks; j++)
+        {
+            cout << " ";
+        }
+        for (int j = 0; j < stars / 2; j++)
+        {
+            cout << "*";
+        }
+        cout << "\n";
+    }
+}
+
+void pattern21(int n)
+{
+    for (int i = 1; i <= n; i++)
+    {
+        if (i == 1 || i == n)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                cout << "*";
+            }
+        }
+        else
+        {
+            cout << "*";
+            for (int j = 0; j < n - 2; j++)
+            {
+                cout << " ";
+            }
+            cout << "*";
+        }
+        cout << "\n";
+    }
+}
+
+void pattern22(int n)
+{
+    for (int i = 0; i < (n - 1) * 2 + 1; i++)
+    {
+        for (int j = 0; j < (n - 1) * 2 + 1; j++)
+        {
+            int row_dist = min(i, (n - 1) * 2 - i);
+            int col_dist = min(j, (n - 1) * 2 - j);
+            int use = min(row_dist, col_dist);
+            cout << n - use;
+        }
+        cout << "\n";
+    }
+}
+
 int main()
 {
     ios::sync_with_stdio(false);
@@ -292,5 +467,26 @@ int main()
     cout << "\n"
          << "Pattern 15" << "\n\n";
     pattern15(4);
+    cout << "\n"
+         << "Pattern 16" << "\n\n";
+    pattern16(4);
+    cout << "\n"
+         << "Pattern 17" << "\n\n";
+    pattern17(4);
+    cout << "\n"
+         << "Pattern 18" << "\n\n";
+    pattern18(4);
+    cout << "\n"
+         << "Pattern 19" << "\n\n";
+    pattern19(4);
+    cout << "\n"
+         << "Pattern 20" << "\n\n";
+    pattern20(4);
+    cout << "\n"
+         << "Pattern 21" << "\n\n";
+    pattern21(4);
+    cout << "\n"
+         << "Pattern 22" << "\n\n";
+    pattern22(4);
     return 0;
 }
